@@ -4,8 +4,9 @@ import './styles/global.css'
 function App() {
   return (
     <>
-    <section>
-      <h1>Hello world</h1>
+    <section id='s_hp'>
+      <h1>Quizz PWA</h1>
+      <button id='btn_start'>Débuter le quizz</button>
     </section>
     </>
   );
