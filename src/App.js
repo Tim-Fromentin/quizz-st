@@ -1,15 +1,23 @@
-import logo from './logo.svg';
 import './styles/global.css'
+import Quizz from "./pages/Quizz";
+import {HashRouter, Routes, Route} from "react-router-dom";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
-    <>
-    <section id='s_hp'>
-      <h1>Quizz PWA</h1>
-      <button id='btn_start'>Débuter le quizz</button>
-    </section>
-    </>
+      <HashRouter>
+        <Routes>
+          <Route path={'/'} element={<Layout />}>
+            <Route index element={<Quizz />} />
+          </Route>
+        </Routes>
+      </HashRouter>
   );
 }
 
 export default App;
+
+/*
+*
+
+ */
