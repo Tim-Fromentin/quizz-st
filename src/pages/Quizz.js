@@ -16,19 +16,30 @@ function Quizz() {
         }
     ];
     let count = 0;
+    let score = 3;
     return (
         <>
             <section id='s_quizz'>
-                <p><span>1</span>/10</p>
+                <p className={'step'}><span>1</span>/10</p>
+                <h5 id={'score'} data-score={score}>Score : <span>{score}</span></h5>
                 <h1>{questions[count].questionTitle}</h1>
                 <p className="text_question">
                     {questions[count].question}                </p>
 
+
+
                 <div className="box_answer">
-                    <button className="btn_answer" key={'1'}>
-                        Réponse 1
-                    </button>
+                    {questions[count].options.map((option, index) => (
+                        <button className="btn_answer" key={index}>
+                            {option}
+                        </button>
+                    ))
+
+                    }
+
                 </div>
+
+                <button disabled={'true'}>Passez à la question suivante</button>
             </section>
         </>
     );

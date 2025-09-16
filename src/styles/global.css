@@ -1,7 +1,39 @@
-html{box-sizing:border-box;font-size:62.5%}*,::after,::before{box-sizing:inherit}body{margin:0;padding:0;font-size:1.6rem;font-family: sans-serif;color: #333;}ol,ul{list-style:none}a{text-decoration:none;color:inherit}button{background: none;border: none;cursor: pointer;}section{padding: 5rem 2rem;}
+html{box-sizing:border-box;font-size:62.5%}*,::after,::before{box-sizing:inherit}
+body{margin:0;padding:0;font-size:1.6rem;font-family: sans-serif;color: #333;}ol,ul{list-style:none}
+a{text-decoration:none;color:inherit}button{background: none;border: none;cursor: pointer;}section{padding: 5rem 2rem;}
 
 
 #s_start {
     text-align: center;
     width: 100%;
+}
+
+#s_quizz {
+    width: 100%;
+    text-align: center;
+
+}
+.step span {
+    color: #000000;
+}
+.box_answer button {
+    background: #03ff2d;
+}
+
+
+#score{
+    --score: attr(data-score);
+    color: if(
+    style(--score: "1"): #f80000;
+    style(--score: "2"): #ff1111;
+    style(--score: "3"): #ff2f2f;
+    style(--score: "4"): #ff4b4b;
+    style(--score: "5"): #ff904b;
+    style(--score: "6"): #008316;
+    style(--score: "7"): #00af1d;
+    style(--score: "8"): #01cf24;
+    style(--score: "9"): #01e327;
+    style(--score: "10"): #03ff2d;
+    else: #333;
+    );
 }
