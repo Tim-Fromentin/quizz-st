@@ -75,3 +75,13 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0}
     background: #0B7FAA;
     color: #fff;
 }
+.quiz-choices img {
+    width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    margin-bottom: 50px;
+}
+
+.quiz-question-block, .question_header {
+    transition: all 5s ease-in-out;
+}

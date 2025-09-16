@@ -126,6 +126,7 @@ export default function Quiz() {
                         <h4>Sélectionnez une réponse</h4>
                     </div>
                     <div className="quiz-choices">
+                        <img src="./assets/imgs/header.png" alt=""/>
                         {current.choices.map((choice, i) => (
                             <button
                                 key={i}
