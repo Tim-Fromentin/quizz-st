@@ -8,7 +8,7 @@ const QUESTIONS = [
         choices: ["Progressive Web Application", "Public Web App", "Private Web API", "Professional Web Application"],
         answerIndex: 0,
     },
-    {
+   {
         id: 2,
         question: "Quel fichier est indispensable pour definir une PWA ?",
         choices: ["robots.txt", "manifest.txt", "manifest.json", "package.json"],
@@ -113,7 +113,7 @@ export default function Quiz() {
 
             {!started ? (
                 <div className="quiz-start">
-                    <p className="quiz-intro">Prêt à tester tes connaissances ?</p>
+                    <h1 className="quiz-intro">Prêt à tester tes connaissances ?</h1>
                     <Button className="quiz-start-button" onClick={() => setStarted(true)}>
                         Commencer le quiz
                     </Button>
@@ -150,11 +150,13 @@ export default function Quiz() {
                             const userChoice = answers[q.id];
                             const correct = userChoice === q.answerIndex;
                             return (
-                                <div key={q.id} className={`quiz-result-item ${correct ? "correct" : "wrong"}`}>
+                                <div key={q.id} className={`quiz-result-item`} data-is-correct={correct ? "correct" : "wrong"}>
                                     <p className="quiz-result-question">{q.question}</p>
                                     <p className="quiz-result-user">Votre réponse : {q.choices[userChoice] ?? "—"}</p>
                                     <p className="quiz-result-correct">Bonne réponse : {q.choices[q.answerIndex]}</p>
+{/*
                                     <p className="quiz-result-icon">{correct ? "✔️" : "❌"}</p>
+*/}
                                 </div>
                             );
                         })}
