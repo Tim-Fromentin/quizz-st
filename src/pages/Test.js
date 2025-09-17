@@ -1,5 +1,7 @@
 import { useState } from "react";
 import '../styles/global.css'
+import Lottie from "lottie-react";
+
 
 const QUESTIONS = [
     {
@@ -101,11 +103,15 @@ export default function Quiz() {
         setIndex(0);
         setAnswers({});
         setFinished(false);
+        window.location.reload();
     }
 
     const score = QUESTIONS.reduce((acc, q) => {
         return acc + (answers[q.id] === q.answerIndex ? 1 : 0);
     }, 0);
+
+
+
 
     return (
         <section className="quiz-container">
@@ -117,6 +123,7 @@ export default function Quiz() {
                     <Button className="quiz-start-button" onClick={() => setStarted(true)}>
                         Commencer le quiz
                     </Button>
+
                 </div>
             ) : !finished ? (
                 <div className="quiz-question-block">
@@ -140,7 +147,18 @@ export default function Quiz() {
                     </div>
                 </div>
             ) : (
-                <div className="quiz-results">
+                <div className={`quiz-results`}>
+                        <div className="success_anim">
+                        <Lottie
+                        style={{ width: 300, height: 300 }}  
+                        path={`/assets/anims/${score > 5 ? "success" : "fail"}.json`}
+                        loop
+                        autoplay
+                        />
+                        <h3>{score > 5 ? "Bien jouer !" : "fail"}</h3>
+                        <h4>Score de : {score} / {QUESTIONS.length}</h4>
+                </div>
+                
                     <h2 className="quiz-results-title">Résultats</h2>
                     <p className="quiz-score">
                         Score : {score} / {QUESTIONS.length}
