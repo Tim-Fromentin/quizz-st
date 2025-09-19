@@ -2,6 +2,18 @@ import { useState } from "react";
 import '../styles/global.css'
 import Lottie from "lottie-react";
 
+console.warn('tricheur');
+
+setInterval(() => {
+  const before = performance.now();
+  debugger; 
+  const after = performance.now();
+
+  if (after - before > 50) {
+    alert("Ta essayer de tricher ?");
+  }
+}, 1000);
+
 
 const QUESTIONS = [
     {
